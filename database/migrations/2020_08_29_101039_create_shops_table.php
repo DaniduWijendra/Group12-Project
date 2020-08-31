@@ -14,10 +14,11 @@ class CreateShopsTable extends Migration
     public function up()
     {
         Schema::create('shops', function (Blueprint $table) {
-            $table->string('shpId',6)->primary();
+            $table->integer('shpId')->primary();
             $table->string('sName',50);
             $table->string('sAddress',50);
             $table->integer('sContact');
+            $table->boolean('isDeleted');
             $table->timestamps();
         });
     }

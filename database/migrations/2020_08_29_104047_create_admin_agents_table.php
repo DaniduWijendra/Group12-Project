@@ -14,8 +14,10 @@ class CreateAdminAgentsTable extends Migration
     public function up()
     {
         Schema::create('admin_agents', function (Blueprint $table) {
-            $table->string('adminId',6);
-            $table->string('agId',6);
+            $table->integer('adminId')->unsigned();
+            $table->integer('agId')->unsigned();
+            $table->primary(array('adminId','agId'));
+            $table->boolean('isDeleted');
             $table->timestamps();
         });
     }

@@ -17,11 +17,16 @@ class CreateSparePartsTable extends Migration
             $table->string('sparePrtId',50)->primary();
             $table->string('sparePrtName',50);
             $table->string('brand',50);
-            $table->string('vId',10);
-            $table->string('shpId',6);
-
-            
+            $table->string('model',50);
+            $table->string('year',5);
+            $table->float('price');
+            $table->bigInteger('vehicleVid')->unsigned();
+           // $table->foreign('vehiclid')->references('vId')->on('vehicles')->onDelete('cascade');
+            $table->bigInteger('shpId')->unsigned();
+           // $table->foreign('shpId')->references('shpId')->on('shops')->onDelete('cascade');
+            $table->boolean('isDeleted');
             $table->timestamps();
+            
         });
     }
 

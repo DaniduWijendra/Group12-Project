@@ -14,8 +14,10 @@ class CreateShopAdminsTable extends Migration
     public function up()
     {
         Schema::create('shop_admins', function (Blueprint $table) {
-            $table->string('adminId',6);
-            $table->string('shpId',6);
+            $table->integer('adminId')->unsigned();
+            $table->integer('shpId')->unsigned();
+            $table->primary(array('adminId','shpId'));
+            $table->boolean('isDeleted');
             $table->timestamps();
         });
     }

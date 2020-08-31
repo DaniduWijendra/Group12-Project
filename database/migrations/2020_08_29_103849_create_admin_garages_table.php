@@ -14,8 +14,10 @@ class CreateAdminGaragesTable extends Migration
     public function up()
     {
         Schema::create('admin_garages', function (Blueprint $table) {
-            $table->string('adminId',6);
-            $table->string('gId',6);
+            $table->integer('adminId')->unsigned();
+            $table->integer('gId')->unsigned();
+            $table->primary(array('adminId','gId'));
+            $table->boolean('isDeleted');
             $table->timestamps();
         });
     }

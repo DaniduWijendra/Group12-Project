@@ -14,7 +14,7 @@ class CreatePolicyholdersTable extends Migration
     public function up()
     {
         Schema::create('policyholders', function (Blueprint $table) {
-            $table->string('pId',6)->primary();
+            $table->integer('pId')->primary();
             $table->string('NIC',10)->unique();
             $table->string('fName',50);
             $table->string('lName',50);
@@ -22,6 +22,10 @@ class CreatePolicyholdersTable extends Migration
             $table->char('pGender',1);
             $table->date('pDOB');
             $table->integer('pContactNo');
+            $table->string('accessList',35);
+            $table->boolean('isDeleted');
+
+
 
             $table->timestamps();
         });

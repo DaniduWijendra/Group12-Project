@@ -14,7 +14,7 @@ class CreateAgentsTable extends Migration
     public function up()
     {
         Schema::create('agents', function (Blueprint $table) {
-            $table->string('agId',6)->primary();
+            $table->integer('agId')->primary();
             $table->string('fName',50);
             $table->string('lname',50);
             $table->string('agAddress',100);
@@ -23,6 +23,8 @@ class CreateAgentsTable extends Migration
             $table->integer('agContactNo');
             $table->string('email',100);
             $table->string('agBranch',50);
+            $table->string('accessList',35);
+            $table->boolean('isDeleted');
             $table->timestamps();
         });
     }

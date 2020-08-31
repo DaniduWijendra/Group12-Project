@@ -14,7 +14,7 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->string('adminId',6);
+            $table->integer('adminId')->primary();
             $table->string('fName',50);
             $table->string('lName',50);
             $table->string('adminAddress',100);
@@ -22,7 +22,10 @@ class CreateAdminsTable extends Migration
             $table->date('adminDOB');
             $table->integer('adminContactNo');
             $table->string('adminEmail',50);
-            $table->primary('adminId');
+            $table->string('accessList',35);
+            $table->string('adminBranch',30);
+            $table->boolean('isDeleted');
+
             
             $table->timestamps();
         });

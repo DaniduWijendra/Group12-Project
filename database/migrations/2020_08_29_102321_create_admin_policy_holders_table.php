@@ -14,10 +14,10 @@ class CreateAdminPolicyHoldersTable extends Migration
     public function up()
     {
         Schema::create('admin_policy_holders', function (Blueprint $table) {
-            $table->string('pId',6);
-            $table->string('adminId',6);
-
-
+            $table->integer('pId')->unsigned();
+            $table->integer('adminId')->unsigned();
+            $table->primary(array('pId','adminId'));
+            $table->binary('isDeleted');
             $table->timestamps();
         });
     }

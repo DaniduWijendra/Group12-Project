@@ -14,12 +14,13 @@ class CreateGaragesTable extends Migration
     public function up()
     {
         Schema::create('garages', function (Blueprint $table) {
-            $table->string('gId',6);
+            $table->integer('gId');
             $table->string('gName',20);
             $table->string('gAddress',50);
             $table->integer('gContactNo');
             $table->timestamps();
             $table->primary('gId');
+            $table->boolean('isDeleted');
         });
     }
 
