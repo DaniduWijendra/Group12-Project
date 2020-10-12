@@ -15,7 +15,7 @@ class CreatePolicyholdersTable extends Migration
     {
         Schema::create('policyholders', function (Blueprint $table) {
             $table->integer('pId')->primary();
-            $table->string('NIC',10)->unique();
+            $table->string('NIC',12)->unique();
             $table->string('fName',50);
             $table->string('lName',50);
             $table->string('pAddress',50);

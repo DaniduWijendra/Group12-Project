@@ -14,7 +14,7 @@ class CreateUserLoginsTable extends Migration
     public function up()
     {
         Schema::create('user_logins', function (Blueprint $table) {
-            $table->integer('userId');
+            $table->integer('userId')->primary();
             $table->string('userName',50);
             $table->string('password',255);
             $table->string('role',20);

@@ -15,6 +15,7 @@ class CreateVehiclesTable extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->integer('vId')->primary();
+            $table->string('vehicleNumber',10)->unique();
             $table->string('policyId',100)->unique();
             $table->string('type',50);
             $table->string('model',50);
