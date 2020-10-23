@@ -1,14 +1,19 @@
-require('./bootstrap');
-window.Vue=require('vue');
-import ViewUI from 'view-design';
-import 'view-design/dist/styles/iview.css';
-import router from './router';
-Vue.use(ViewUI);
+require('./bootstrap')
 
-Vue.component('mainapp',require('./components/mainapp.vue').default);
-const app=new Vue(
-    {
-        el: '#app',
-        router
-    }
-)
+window.Vue=require('vue')
+
+Vue.component('mainapp',require('./components/mainApp.vue').default)
+
+
+import router from './router'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+Vue.use(Vuetify);
+
+
+
+const app=new Vue({
+    el:'#app',
+    vuetify:new Vuetify(),
+    router,
+})
