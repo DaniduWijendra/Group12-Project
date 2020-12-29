@@ -21,3 +21,5 @@ Route::any('{slug}',function()
 {
     return view('welcome');
 });
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/signup', 'SocialAuthFacebookController@callback');
